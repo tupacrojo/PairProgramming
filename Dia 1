@@ -1,4 +1,4 @@
-//Realizar un programa que cree un vector con una longitud ingresada por el usuario, mostrar el numero mas chico y si se repite algun numero
+//Realizar un programa que cree un vector con una longitud ingresada por el usuario, mostrar el numero mas chico y si se repite algun numero - Sergio Velazquez y Tupac Rodriguez
 using System;
 
 namespace PruebaVector
