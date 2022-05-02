@@ -1,0 +1,64 @@
+//Realizar un programa que cree un vector con una longitud ingresada por el usuario, mostrar el numero mas chico y si se repite algun numero
+using System;
+
+namespace PruebaVector
+{
+    class PruebaVector
+    {
+        private int[] vec;
+        private int menor;
+        public void Cargar()
+        {
+            Console.Write("Ingrese la longitud del vector:");
+            string longitud;
+            longitud = Console.ReadLine();
+            int n = int.Parse(longitud);
+            vec = new int[n];
+            for (int f = 0; f < vec.Length; f++)
+            {
+                Console.Write("Ingrese componente [" + (f + 1) + "]: ");
+                longitud = Console.ReadLine();
+                vec[f] = int.Parse(longitud);
+            }
+        }
+        public void MenorElemento()
+        {
+            menor = vec[0];
+            for (int f = 1; f < vec.Length; f++)
+            {
+                if (vec[f] < menor)
+                {
+                    menor = vec[f];
+                }
+            }
+            Console.WriteLine("El elemento menor es: " + menor);
+        }
+        public void RepiteMenor()
+        {
+            int cant = 0;
+            for (int f = 0; f < vec.Length; f++)
+            {
+                if (vec[f] == menor)
+                {
+                    cant++;
+                }
+            }
+            if (cant > 1)
+            {
+                Console.WriteLine("Se repite el numero.");
+            }
+            else
+            {
+                Console.WriteLine("No se repite el menor.");
+            }
+            Console.ReadLine();
+        }
+        static void Main(string[] args)
+        {
+            PruebaVector pv = new PruebaVector();
+            pv.Cargar();
+            pv.MenorElemento();
+            pv.RepiteMenor();
+        }
+    }
+}
